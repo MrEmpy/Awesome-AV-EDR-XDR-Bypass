@@ -7,3 +7,5 @@ desc
 | Name | Type | Operating System | XXX | XXX |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | Windows Defender | Antivirus | Windows | XXX | XXX |
+| BitDefender Endpoint Security Tool | EDR | Windows | XXX | XXX |
+| McAfee MVISION | EDR | Windows | XXX | XXX |
