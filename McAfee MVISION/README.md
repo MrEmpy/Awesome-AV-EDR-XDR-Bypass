@@ -1,10 +1,10 @@
 # Bypassing using ScareCrow
 
-You can use the scarecrow tool to bypass McAfee EDR. We tested 3 types of metasploit payloads that work, they are:
+You can use the [scarecrow](https://github.com/optiv/ScareCrow) tool to bypass McAfee EDR. We tested 3 types of metasploit payloads that work, they are:
 
 * windows/x64/shell/reverse_tcp
 * windows/x64/meterpreter_reverse_https
-* windows/64/exec
+* windows/x64/exec
 
 Commands:
 ```
