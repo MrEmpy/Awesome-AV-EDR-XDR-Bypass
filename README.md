@@ -1,4 +1,4 @@
-<h1 align="center">「🛡️」Awesome AV/EDR/XDR Bypass Tips.</h1>
+<h1 align="center">「🛡️」Awesome AV/EDR/XDR Bypass Tips</h1>
 
 <p align="center"><img src="https://png.pngtree.com/png-vector/20190215/ourlarge/pngtree-vector-guard-shield-icon-png-image_691190.jpg"></p>
 
