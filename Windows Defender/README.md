@@ -20,3 +20,7 @@ Command:
 ## Execution
 
 ![](Images/amsi_bypass1.png)
+
+# XXXXXXXXXXXXXX
+
+![](Images/wd+amsi_bypass_mimikatz.png)
