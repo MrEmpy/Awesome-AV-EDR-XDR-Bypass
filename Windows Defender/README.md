@@ -23,6 +23,8 @@ Command:
 
 # Defeating Windows Defender & Bypassing Amsi And Running Mimikatz
 
+## Execution
+
 ![](Images/wd+amsi_bypass_mimikatz.png)
 
 Command:
