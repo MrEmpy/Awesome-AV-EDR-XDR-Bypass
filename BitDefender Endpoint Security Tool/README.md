@@ -16,6 +16,8 @@ python3 condor.py -p windows/x64/exec
 
 3. Paste the Powershell payload to generate the shellcode
 
+![](Images/bitdefender2.png)
+
 4. Upload the EXE to the machine and run.
 
 ![](Images/bitdefender.png)
