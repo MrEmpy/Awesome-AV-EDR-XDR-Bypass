@@ -6,6 +6,8 @@ Welcome to this repository! The purpose of this repository is to gather as many 
 
 Help our work by leaving a star in the repository ;)
 
+[Gitbook Here](https://mrempy.gitbook.io/awesome-av-edr-xdr-bypass-tips/readme/windows-defender)
+
 ## AV/EDR/XDR Table
 
 | Name | Type | Operating System | XXX | XXX |
