@@ -13,6 +13,6 @@ Help our work by leaving a star in the repository ;)
 | Name | Type | Operating System | XXX | XXX |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | [BitDefender Endpoint Security Tool](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/BitDefender%20Endpoint%20Security%20Tool) | EDR | Windows | XXX | XXX |
-| [McAfee MVISION](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/McAfee%20MVISION) | EDR | Windows | XXX | XXX |
+| [McAfee Endpoint Protection](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/McAfee%20MVISION) | EDR | Windows | XXX | XXX |
 | [Sophos](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Sophos) | EDR | Windows | XXX | XXX |
 | [Windows Defender](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Windows%20Defender) | Antivirus | Windows | XXX | XXX |
