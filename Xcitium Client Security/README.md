@@ -42,6 +42,6 @@ On the target server, bypass AMSI using [command](https://github.com/MrEmpy/Awes
 
 Note: in the screenshot at I encoded in Base64 to be in just one line.
 
-![](<../Xcitium Client Security/Images/ps-pl-success1.png)
+![](<../Xcitium Client Security/Images/ps-pl-success1.png>)
 
-![](<../Xcitium Client Security/Images/ps-pl-success2.png)
+![](<../Xcitium Client Security/Images/ps-pl-success2.png>)
