@@ -16,3 +16,4 @@ Help our work by leaving a star in the repository ;)
 | [McAfee Endpoint Protection](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/McAfee%20MVISION) | EDR | Windows | XXX | XXX |
 | [Sophos](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Sophos) | EDR | Windows | XXX | XXX |
 | [Windows Defender](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Windows%20Defender) | Antivirus | Windows | XXX | XXX |
+| [Xcitium Client Security](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Xcitium%20Client%20Security) | Antivirus | Windows | XXX | XXX |
