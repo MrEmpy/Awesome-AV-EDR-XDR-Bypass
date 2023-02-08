@@ -1,4 +1,4 @@
-# Windows Defender
+# Xcitium Client Security
 
 ## AMSI Bypass
 
@@ -20,4 +20,4 @@ Command:
 
 ### Execution
 
-![](<../Windows Defender/Images/amsi\_bypass1.png>)
+![](<../Xcitium Client Security/Images/amsi-bypass1.png>)
