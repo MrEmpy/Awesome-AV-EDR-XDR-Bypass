@@ -46,7 +46,7 @@ Note: in the screenshot at I encoded in Base64 to be in just one line.
 
 ![](<../Xcitium Client Security/Images/ps-pl-success2.png>)
 
-## Running Mimikatz
+## Running Mimikatz via Powershell
 
 As discussed above about the lack of concern with the execution of commands via Powershell by Client Security, a simple command to load Mimikatz via Powershell is enough.
 
