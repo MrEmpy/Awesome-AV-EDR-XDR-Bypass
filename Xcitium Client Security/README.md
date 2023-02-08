@@ -20,4 +20,4 @@ Command:
 
 ### Execution
 
-![](<../Xcitium Client Security/Images/amsi-bypass1.png>)
+![](<../Xcitium Client Security/Images/amsi-bypass.png>)
